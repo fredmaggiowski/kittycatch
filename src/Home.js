@@ -11,13 +11,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Home({onRageModeButtonPress}) {
+export default function Home({onRageModeButtonPress, onSettingsButtonPress}) {
   return (
     <View style={styles.boardContainer}>
       <Button title="Rage mode" onPress={onRageModeButtonPress} />
+      <Button title="Settings" onPress={onSettingsButtonPress} />
     </View>
   );
 }
 Home.propTypes = {
   onRageModeButtonPress: PropTypes.func.isRequired,
+  onSettingsButtonPress: PropTypes.func.isRequired,
 };

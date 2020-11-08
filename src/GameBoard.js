@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
-import PropTypes from 'prop-types';
-import {BackHandler, StyleSheet, View} from 'react-native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
 import Sound from 'react-native-sound';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Circle from './Circle';
 import AnimatedCircle from './RandomPathAnimator';
+import {withBackButtonHandler} from './withBackButtonHandler';
 
 const styles = StyleSheet.create({
   boardContainer: {
@@ -14,17 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function GameBoard({onBackPress}) {
-  useEffect(() => {
-    const onBack = () => {
-      onBackPress();
-      return true;
-    };
-
-    const handler = BackHandler.addEventListener('hardwareBackPress', onBack);
-    return () => handler.remove();
-  }, [onBackPress]);
-
+function GameBoard() {
   const sound = new Sound('feedback_ok.wav', Sound.MAIN_BUNDLE, (error) => {
     if (error) {
       console.log('failed to load the sound', error);
@@ -48,6 +38,5 @@ export default function GameBoard({onBackPress}) {
     </View>
   );
 }
-GameBoard.propTypes = {
-  onBackPress: PropTypes.func.isRequired,
-};
+GameBoard.propTypes = {};
+export default withBackButtonHandler(GameBoard);
