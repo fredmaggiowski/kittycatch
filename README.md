@@ -12,6 +12,6 @@ I've decided to create a simple one and I promise I'll try resist putting ads in
 
 ### Vincent
 
-Here's a picture of ~~son of the devil~~ Vincent in a rare lapse of sleep.
+Here's a picture of ~~son of the devil~~ Vincent in a rare moment of sleep.
 
-<img src="./vincent.jpg" height="250"/>
+<p align="center"><img src="./vincent.jpg" height="450"/></p>
