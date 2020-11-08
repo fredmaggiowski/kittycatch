@@ -13,11 +13,13 @@ export default function App() {
       case null:
         return (
           <Home
+            onArcadeModeButtonPress={() => setPage('arcade')}
             onRageModeButtonPress={() => setPage('rage')}
             onSettingsButtonPress={() => setPage('settings')}
           />
         );
       case 'rage':
+      case 'arcade':
         return <GameBoard onBackPress={() => setPage(null)} gameMode={page} />;
       case 'settings':
         return <SettingsPage onBackPress={() => setPage(null)} />;

@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
 import {Animated, Dimensions} from 'react-native';
 
 export default function RandomPathAnimator({children}) {
@@ -37,6 +36,3 @@ export default function RandomPathAnimator({children}) {
     </Animated.View>
   );
 }
-RandomPathAnimator.propTypes = {
-  onPress: PropTypes.func,
-};

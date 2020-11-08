@@ -14,11 +14,19 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Home({onRageModeButtonPress, onSettingsButtonPress}) {
+export default function Home({
+  onArcadeModeButtonPress,
+  onRageModeButtonPress,
+  onSettingsButtonPress,
+}) {
   return (
     <View style={styles.boardContainer}>
       <View style={styles.homeRow}>
         <Button title="Rage mode" onPress={onRageModeButtonPress} />
+      </View>
+
+      <View style={styles.homeRow}>
+        <Button title="Arcade mode" onPress={onArcadeModeButtonPress} />
       </View>
 
       <View style={styles.homeRow}>
@@ -28,6 +36,7 @@ export default function Home({onRageModeButtonPress, onSettingsButtonPress}) {
   );
 }
 Home.propTypes = {
+  onArcadeModeButtonPress: PropTypes.func.isRequired,
   onRageModeButtonPress: PropTypes.func.isRequired,
   onSettingsButtonPress: PropTypes.func.isRequired,
 };
