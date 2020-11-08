@@ -6,8 +6,8 @@ export default function RandomAppearAnimator({children}) {
   const fadeAnimation = useRef(new Animated.Value(0));
 
   const destination = {
-    x: windowWidth * Math.random(),
-    y: windowHeight * Math.random(),
+    x: (windowWidth - 100) * Math.random(),
+    y: (windowHeight - 100) * Math.random(),
   };
 
   const fadeIn = useCallback(() => {

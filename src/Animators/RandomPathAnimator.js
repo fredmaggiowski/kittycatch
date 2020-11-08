@@ -7,8 +7,8 @@ export default function RandomPathAnimator({children}) {
 
   const loopAnimation = useCallback(() => {
     const destination = {
-      x: windowWidth * Math.random(),
-      y: windowHeight * Math.random(),
+      x: (windowWidth - 150) * Math.random(),
+      y: (windowHeight - 150) * Math.random(),
     };
 
     Animated.timing(positionAnim.current, {
