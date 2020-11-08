@@ -1,9 +1,9 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
 import {StyleSheet, Switch, Text, View} from 'react-native';
-import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {withBackButtonHandler} from './withBackButtonHandler';
+import {withSetting, SOUND_ENABLED} from './withSetting';
 
 const styles = StyleSheet.create({
   boardContainer: {
@@ -18,42 +18,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   settingsTitle: {
-    fontSize: 25,
+    fontSize: 24,
   },
 });
 
-const SOUND_ENABLED = 'SOUND_ENABLED';
-
-function SettingsPage() {
-  const [soundEnabled, setSoundEnabled] = useState(false);
-  const {getItem, setItem} = useAsyncStorage(SOUND_ENABLED);
-
-  const readItemFromStorage = useCallback(async () => {
-    const item = await getItem();
-    setSoundEnabled(item === 'true');
-  }, [getItem]);
-
-  const writeItemToStorage = async (newValue) => {
-    await setItem(newValue);
-    setSoundEnabled(newValue.toString());
-  };
-
-  useEffect(() => {
-    readItemFromStorage();
-  }, [readItemFromStorage]);
+function SettingsPage({settings}) {
+  const {value: soundEnabled, set: setSoundEnabled} = settings[SOUND_ENABLED];
 
   return (
     <View style={styles.boardContainer}>
       <View style={styles.settingsRow}>
         <Text style={styles.settingsTitle}>Sound enabled</Text>
         <Switch
-          onValueChange={() => {
-            writeItemToStorage(`${!soundEnabled}`);
-          }}
+          onValueChange={() => setSoundEnabled(`${!soundEnabled}`)}
           value={soundEnabled}
         />
       </View>
     </View>
   );
 }
-export default withBackButtonHandler(SettingsPage);
+export default withBackButtonHandler(withSetting(SOUND_ENABLED, SettingsPage));

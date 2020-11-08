@@ -6,6 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Circle from './Circle';
 import AnimatedCircle from './RandomPathAnimator';
 import {withBackButtonHandler} from './withBackButtonHandler';
+import {withSetting, SOUND_ENABLED} from './withSetting';
 
 const styles = StyleSheet.create({
   boardContainer: {
@@ -14,7 +15,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function GameBoard() {
+function GameBoard({settings}) {
+  const {
+    SOUND_ENABLED: {value: soundEnabled},
+  } = settings;
+
   const sound = new Sound('feedback_ok.wav', Sound.MAIN_BUNDLE, (error) => {
     if (error) {
       console.log('failed to load the sound', error);
@@ -23,6 +28,9 @@ function GameBoard() {
   });
 
   const onPress = () => {
+    if (!soundEnabled) {
+      return;
+    }
     sound.stop();
     sound.play();
   };
@@ -39,4 +47,5 @@ function GameBoard() {
   );
 }
 GameBoard.propTypes = {};
-export default withBackButtonHandler(GameBoard);
+
+export default withBackButtonHandler(withSetting(SOUND_ENABLED, GameBoard));
