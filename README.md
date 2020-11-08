@@ -15,3 +15,7 @@ I've decided to create a simple one and I promise I'll try resist putting ads in
 Here's a picture of ~~son of the devil~~ Vincent in a rare moment of sleep.
 
 <p align="center"><img src="./vincent.jpg" height="450"/></p>
+
+## Credits
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
