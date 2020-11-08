@@ -37,6 +37,6 @@ export default function RandomPathAnimator({children}) {
     </Animated.View>
   );
 }
-AnimatedCircle.propTypes = {
+RandomPathAnimator.propTypes = {
   onPress: PropTypes.func,
 };
