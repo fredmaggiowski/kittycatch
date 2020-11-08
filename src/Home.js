@@ -22,11 +22,11 @@ export default function Home({
   return (
     <View style={styles.boardContainer}>
       <View style={styles.homeRow}>
-        <Button title="Rage mode" onPress={onRageModeButtonPress} />
+        <Button title="Arcade mode" onPress={onArcadeModeButtonPress} />
       </View>
 
       <View style={styles.homeRow}>
-        <Button title="Arcade mode" onPress={onArcadeModeButtonPress} />
+        <Button title="Rage mode" onPress={onRageModeButtonPress} />
       </View>
 
       <View style={styles.homeRow}>
