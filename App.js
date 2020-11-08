@@ -3,7 +3,7 @@ import {SafeAreaView, StatusBar} from 'react-native';
 
 import Home from './src/Home';
 import GameBoard from './src/GameBoard';
-import SettingsPage from './src/SettingsPage';
+import SettingsPage from './src/Settings/SettingsPage';
 
 export default function App() {
   const [page, setPage] = useState(null);

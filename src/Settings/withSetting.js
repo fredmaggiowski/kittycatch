@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
-export const SOUND_ENABLED = 'SOUND_ENABLED';
+export const SOUND_DISABLED = 'SOUND_DISABLED';
 
 export const withSetting = (desiredSetting, WrappedComponent) => (props) => {
   const [setting, setSetting] = useState(null);

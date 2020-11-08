@@ -3,7 +3,7 @@ import {StyleSheet, Switch, Text, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {withBackButtonHandler} from '../withBackButtonHandler';
-import {withSetting, SOUND_ENABLED} from './withSetting';
+import {withSetting, SOUND_DISABLED} from './withSetting';
 
 const styles = StyleSheet.create({
   boardContainer: {
@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
 });
 
 function SettingsPage({settings}) {
-  const {value: soundEnabled, set: setSoundEnabled} = settings[SOUND_ENABLED];
+  const {value: soundEnabled, set: setSoundEnabled} = settings[SOUND_DISABLED];
 
   return (
     <View style={styles.boardContainer}>
       <View style={styles.settingsRow}>
-        <Text style={styles.settingsTitle}>Sound enabled</Text>
+        <Text style={styles.settingsTitle}>Sound disabled</Text>
         <Switch
           onValueChange={() => setSoundEnabled(`${!soundEnabled}`)}
           value={soundEnabled}
@@ -37,4 +37,4 @@ function SettingsPage({settings}) {
     </View>
   );
 }
-export default withBackButtonHandler(withSetting(SOUND_ENABLED, SettingsPage));
+export default withBackButtonHandler(withSetting(SOUND_DISABLED, SettingsPage));
