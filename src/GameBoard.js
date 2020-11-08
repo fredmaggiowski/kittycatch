@@ -76,7 +76,7 @@ function GameBoard({gameMode, settings}) {
             </View>
             <RandomAppearAnimator key={`arcade-animator-${arcadeCount}`}>
               <Circle
-                color={'yellow'}
+                color={'red'}
                 onPress={() => {
                   setArcadeCount(arcadeCount + 1);
                   onPress();
