@@ -50,9 +50,7 @@ function GameBoard({gameMode, settings}) {
     sound.play();
   };
 
-  const onPress = () => {
-    playSoundFeedback();
-  };
+  const onPress = () => playSoundFeedback();
 
   const selectGameMode = () => {
     switch (gameMode) {
