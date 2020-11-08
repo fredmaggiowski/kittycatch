@@ -14,4 +14,4 @@ I've decided to create a simple one and I promise I'll try resist putting ads in
 
 Here's a picture of ~~son of the devil~~ Vincent in a rare lapse of sleep.
 
-![Vincent](./vincent.jpg)
+<img src="./vincent.jpg" height="250"/>
