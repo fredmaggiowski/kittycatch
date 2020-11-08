@@ -4,7 +4,7 @@ import Sound from 'react-native-sound';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Circle from './Circle';
-import RandomPathAnimator from './RandomPathAnimator';
+import RandomPathAnimator from './Animators/RandomPathAnimator';
 import {withBackButtonHandler} from './withBackButtonHandler';
 import {withSetting, SOUND_DISABLED} from './Settings/withSetting';
 
