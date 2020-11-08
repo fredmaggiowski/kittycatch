@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 
 import GameBoard from './src/GameBoard';
 import Home from './src/Home';
