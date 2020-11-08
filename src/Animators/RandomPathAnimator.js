@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {Animated, Dimensions} from 'react-native';
 
-export default function AnimatedCircle({children}) {
+export default function RandomPathAnimator({children}) {
   const {width: windowWidth, height: windowHeight} = Dimensions.get('window');
   const positionAnim = useRef(new Animated.ValueXY());
 
