@@ -4,7 +4,7 @@ import Sound from 'react-native-sound';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Circle from './Circle';
-import AnimatedCircle from './RandomPathAnimator';
+import RandomPathAnimator from './RandomPathAnimator';
 import {withBackButtonHandler} from './withBackButtonHandler';
 import {withSetting, SOUND_DISABLED} from './Settings/withSetting';
 
@@ -37,12 +37,15 @@ function GameBoard({settings}) {
 
   return (
     <View style={styles.boardContainer}>
-      <AnimatedCircle>
+      <RandomPathAnimator>
         <Circle color={'blue'} onPress={onPress} />
-      </AnimatedCircle>
-      <AnimatedCircle>
+      </RandomPathAnimator>
+      <RandomPathAnimator>
         <Circle color={'red'} onPress={onPress} />
-      </AnimatedCircle>
+      </RandomPathAnimator>
+      <RandomPathAnimator>
+        <Circle color={'yellow'} onPress={onPress} />
+      </RandomPathAnimator>
     </View>
   );
 }

@@ -8,13 +8,13 @@ export default function AnimatedCircle({children}) {
 
   const loopAnimation = useCallback(() => {
     const destination = {
-      x: windowWidth * Math.random() - 100,
-      y: windowHeight * Math.random() - 100,
+      x: windowWidth * Math.random(),
+      y: windowHeight * Math.random(),
     };
 
     Animated.timing(positionAnim.current, {
       toValue: destination,
-      duration: 2000,
+      duration: 1500,
       useNativeDriver: true,
     }).start(() => {
       loopAnimation();
