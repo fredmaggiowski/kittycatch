@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Switch, Text, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import {withBackButtonHandler} from './withBackButtonHandler';
+import {withBackButtonHandler} from '../withBackButtonHandler';
 import {withSetting, SOUND_ENABLED} from './withSetting';
 
 const styles = StyleSheet.create({

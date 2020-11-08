@@ -6,7 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Circle from './Circle';
 import AnimatedCircle from './RandomPathAnimator';
 import {withBackButtonHandler} from './withBackButtonHandler';
-import {withSetting, SOUND_ENABLED} from './withSetting';
+import {withSetting, SOUND_ENABLED} from './Settings/withSetting';
 
 const styles = StyleSheet.create({
   boardContainer: {
