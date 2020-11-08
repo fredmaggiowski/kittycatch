@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import Sound from 'react-native-sound';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Circle from './Circle';
@@ -14,9 +15,18 @@ const styles = StyleSheet.create({
 });
 
 export default function GameBoard({size, color}) {
+  const sound = new Sound('feedback_ok.wav', Sound.MAIN_BUNDLE, (error) => {
+    if (error) {
+      console.log('failed to load the sound', error);
+      return;
+    }
+  });
+
   const onPress = () => {
-    console.log('PRESS');
+    sound.stop();
+    sound.play();
   };
+
   return (
     <View style={styles.boardContainer}>
       <AnimatedCircle>
