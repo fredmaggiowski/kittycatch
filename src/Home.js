@@ -9,13 +9,21 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: Colors.white,
   },
+  homeRow: {
+    padding: 16,
+  },
 });
 
 export default function Home({onRageModeButtonPress, onSettingsButtonPress}) {
   return (
     <View style={styles.boardContainer}>
-      <Button title="Rage mode" onPress={onRageModeButtonPress} />
-      <Button title="Settings" onPress={onSettingsButtonPress} />
+      <View style={styles.homeRow}>
+        <Button title="Rage mode" onPress={onRageModeButtonPress} />
+      </View>
+
+      <View style={styles.homeRow}>
+        <Button title="Settings" onPress={onSettingsButtonPress} />
+      </View>
     </View>
   );
 }
