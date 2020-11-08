@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'CatCatcher' do
+target 'KittyCatch' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'CatCatcherTests' do
+  target 'KittyCatchTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'CatCatcher' do
   end
 end
 
-target 'CatCatcher-tvOS' do
-  # Pods for CatCatcher-tvOS
+target 'KittyCatch-tvOS' do
+  # Pods for KittyCatch-tvOS
 
-  target 'CatCatcher-tvOSTests' do
+  target 'KittyCatch-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
